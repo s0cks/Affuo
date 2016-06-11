@@ -198,3 +198,26 @@ body {
 .repository input[type=button]:active{
     background-color: #D5FF00;
 }
+
+.repository-bar{
+    top: -60px;
+    width: 120px;
+    float: right;
+    height: 100%;
+    display: block;
+    position: relative;
+    border-left: 2px solid #404445;
+}
+
+.repository-bar .repository-name{
+    text-align: left;
+    height: 60px;
+    color: white;
+    font-weight: bold;
+    font-size: 64px;
+    -webkit-transform: rotate(-90deg) translate(-400%);
+    -moz-transform: rotate(-90deg) translate(-400%);
+    -ms-transform: rotate(-90deg) translate(-400%);
+    -o-transform: rotate(-90deg) translate(-400%);
+    transform: rotate(-90deg) translate(-400%);
+}
