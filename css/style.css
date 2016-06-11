@@ -26,7 +26,7 @@ body {
 }
 
 .node circle {
-    fill: #FFF;
+    fill: #F3F3F3;
     stroke: #C3C3C3;
     stroke-width: 3px;
 }
@@ -197,7 +197,7 @@ body {
 }
 
 .repository input[type=button]:active{
-    background-color: #FFFFFF;
+    background-color: #F3F3F3;
 }
 
 .repository-bar{
@@ -213,7 +213,7 @@ body {
 .repository-bar .repository-name{
     text-align: left;
     height: 60px;
-    color: white;
+    color: #F3F3F3;
     font-weight: bold;
     font-size: 64px;
     -webkit-transform: rotate(-90deg) translate(-400%);
