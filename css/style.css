@@ -1,7 +1,149 @@
-body{
+body {
     margin: 0;
     left: 0;
     top: 0;
     overflow-x: auto;
     overflow-y: hidden;
+    background-color: #2E3233;
+}
+
+.cfg.open{
+    top: 0;
+}
+
+.cfg{
+    position: relative;
+    top: -60px;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.node {
+    cursor: pointer;
+}
+
+.node circle {
+    fill: #FFF;
+    stroke: steelblue;
+    stroke-width: 3px;
+}
+
+.node text {
+    font: 12px sans-serif;
+}
+
+.link {
+    fill: none;
+    stroke: #CCC;
+    stroke-width: 2px;
+}
+
+.navigation {
+    top: -120px;
+    position: relative;
+    left: 0;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.navigation.open{
+    top: 0;
+}
+
+.close-button {
+    height: 50px;
+    width: 50px;
+    box-sizing: border-box;
+    display: inline-block;
+    position: absolute;
+    left: 90%;
+    top: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.close-button:before,
+.close-button:after{
+    transform: rotate(0deg);
+    line-height: 2px;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -25px;
+    display: block;
+    height: 2px;
+    width: 25px;
+    transition: all 0.25s ease-out;
+    background-color: #FFF;
+}
+
+.close-button.open:before{
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.close-button.open:after{
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.close-button.open:before,
+.close-button.open:after{
+    background-color: #000;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    text-align: center;
+    padding: 0;
+    display: block;
+    width: 100%;
+    height: 64px;
+    vertical-align: middle;
+    background-color: #CAF200;
+}
+
+ul li {
+    float: left;
+    margin-right: 1px;
+}
+
+.brand {
+    margin-right: 120px !important;
+}
+
+.brand > a {
+    background-color: #CAF200 !important;
+    color: #2E3233 !important;
+}
+
+ul li a {
+    width: 120px;
+    height: 64px;
+    text-decoration: none;
+    display: table-cell;
+    font-weight: bold;
+    font-size: 12px;
+    vertical-align: middle;
+    text-align: center;
+    color: #2E3233;
+}
+
+ul li a:hover {
+    background-color: #D5FF00;
 }

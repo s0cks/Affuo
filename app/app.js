@@ -21,6 +21,7 @@ app.directive("cfg", [function(){
     return {
         restrict: "E",
         scope: false,
+        replace: true,
         link: function($scope, $elem, $attrs){
             var width = (parseInt($attrs.width) || document.body.clientWidth),
                 height = (parseInt($attrs.height) || document.body.clientHeight);
@@ -36,6 +37,7 @@ app.directive("cfg", [function(){
             var svg = d3.select($elem[0])
                 .append("svg")
                 .attr("width", width)
+                .attr("class", "cfg")
                 .attr("height", height)
                 .append("g")
                 .attr("transform", "translate(120,0)");
@@ -90,7 +92,8 @@ app.directive("cfg", [function(){
                     .attr("r", 10)
                     .style("fill", "#FFF");
                 nodeUpdate.select("text")
-                    .style("fill-opacity", 1);
+                    .style("fill-opacity", 1)
+                    .style("fill", "#FFF");
 
                 var nodeExit = node.exit().transition()
                     .duration(750)

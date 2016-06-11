@@ -4,31 +4,27 @@
         <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-route.min.js" charset="utf-8"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="app/app.js"></script>
         <link rel="stylesheet" href="css/style.css"/>
-        <style>
-            .node{
-                cursor: pointer;
+        <script>
+            function toggleMenu(){
+                $(".close-button").toggleClass("open");
+                $(".navigation").toggleClass("open");
+                $(".cfg").toggleClass("open");
             }
-
-            .node circle{
-                fill: #FFF;
-                stroke: steelblue;
-                stroke-width: 3px;
-            }
-
-            .node text{
-                font: 12px sans-serif;
-            }
-
-            .link{
-                fill: none;
-                stroke: #CCC;
-                stroke-width: 2px;
-            }
-        </style>
+        </script>
     </head>
     <body data-ng-controller="mainCtrl">
-        <cfg/>
+        <div class="navigation">
+            <ul>
+                <li class="brand"><a href="#">Affuo</a></li>
+                <li><a href="#/dashboard>">Home</a></li>
+                <li><a href="https://github.com/s0cks/">Creator</a></li>
+                <li><a href="https://github.com/s0cks/Affuo">GitHub</a></li>
+            </ul>
+        </div>
+        <div class="close-button" onclick="toggleMenu()"></div>
+        <cfg></cfg>
     </body>
 </html>
