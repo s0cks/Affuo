@@ -7,18 +7,8 @@ body {
     background-color: #2E3233;
 }
 
-.cfg.open{
-    top: 0;
-}
-
-.cfg{
-    position: relative;
-    top: -60px;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -ms-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s;
+canvas{
+    cursor: pointer;
 }
 
 .node {

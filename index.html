@@ -7,6 +7,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.js"></script>
         <script src="app/app.js"></script>
+        <script src="app/TrackBall.js"></script>
         <script src="app/Graph.js"></script>
         <link rel="stylesheet" href="css/style.css"/>
         <script>
@@ -33,8 +34,30 @@
             </div>
         </div>
         <div class="close-button" onclick="toggleMenu()"></div>
+        <div class="graph"></div>
         <div class="repository-bar">
             <div class="repository-name"> {{ repository.owner.login + "/" + repository.name }}</div>
         </div>
+
+        <script>
+            $(document).ready(function(){
+                var testGraph = new Graph();
+                var last = null;
+                for(var i = 0; i < 10; i++){
+                    var current = new Node("test" + i);
+                    testGraph.addNode(current);
+
+                    if(!(Math.random() + 0.5 | 0) && last !== null){
+                        testGraph.addEdge(last, current);
+                    }
+
+                    last = current;
+                }
+
+                var graph = new DependencyGraph({ graph: testGraph });
+
+                $(".graph").replaceWith(graph);
+            });
+        </script>
     </body>
 </html>
