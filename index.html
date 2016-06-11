@@ -29,7 +29,7 @@
             <div class="repository">
                 <form>
                     <input type="text" placeholder="Import Repository..." data-ng-model="repository_link"/>
-                    <input type="submit" value="Import" data-ng-click="repository = loadRepository(repository_link)"/>
+                    <input type="submit" data-ng-submit="loadRepository(repository_link)" value="Import" data-ng-click="repository = loadRepository(repository_link)"/>
                 </form>
             </div>
         </div>
