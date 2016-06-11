@@ -114,7 +114,7 @@ body {
     width: 100%;
     height: 63px;
     vertical-align: middle;
-    background-color: #CAF200;
+    background-color: #F3F3F3;
     border-bottom: 1px solid black;
 }
 
@@ -128,7 +128,7 @@ body {
 }
 
 .brand > a {
-    background-color: #CAF200 !important;
+    background-color: #F3F3F3 !important;
     color: #2E3233 !important;
 }
 
@@ -145,13 +145,13 @@ body {
 }
 
 .navigation ul li a:hover {
-    background-color: #D5FF00;
+    background-color: #FAFAFA;
 }
 
 .repository {
     z-index: 999;
     top: 64px;
-    background-color: #CAF200;
+    background-color: #F3F3F3;
     list-style: none;
     width: 100%;
     height: 64px;
@@ -164,7 +164,7 @@ body {
     width: 50%;
     height: 58px;
     padding-left: 15px;
-    background: #CAF200;
+    background: #F3F3F3;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -186,7 +186,7 @@ body {
     width: 120px;
     height: 64px;
     padding-left: 10px;
-    background: #CAF200;
+    background: #F3F3F3;
     color: #2E3233;
     cursor: pointer;
     border: none;
@@ -197,7 +197,7 @@ body {
 }
 
 .repository input[type=button]:active{
-    background-color: #D5FF00;
+    background-color: #FFFFFF;
 }
 
 .repository-bar{

@@ -1,14 +1,13 @@
 <html data-ng-app="affuo">
     <head>
         <title>Affuo</title>
-        <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-route.min.js"
                 charset="utf-8"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <script src="https://github.com/pegjs/pegjs/releases/download/v0.9.0/peg-0.9.0.min.js"></script>
-        <script src="app/javaparser.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.js"></script>
         <script src="app/app.js"></script>
+        <script src="app/Graph.js"></script>
         <link rel="stylesheet" href="css/style.css"/>
         <script>
             function toggleMenu() {
@@ -34,7 +33,6 @@
             </div>
         </div>
         <div class="close-button" onclick="toggleMenu()"></div>
-        <cfg></cfg>
         <div class="repository-bar">
             <div class="repository-name"> {{ repository.owner.login + "/" + repository.name }}</div>
         </div>
