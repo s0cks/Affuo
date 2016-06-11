@@ -21,7 +21,7 @@ app.service("javaToAST", [function(){
 
 }]);
 
-app.directive("cfg", [function($scope){
+app.directive("cfg", [function(){
     return {
         restrict: "E",
         replace: true,
