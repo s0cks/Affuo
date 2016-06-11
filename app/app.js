@@ -17,11 +17,15 @@ var treeData = {
     ]
 };
 
-app.directive("cfg", [function(){
+app.service("javaToAST", [function(){
+
+}]);
+
+app.directive("cfg", [function($scope){
     return {
         restrict: "E",
-        scope: false,
         replace: true,
+        scope: false,
         link: function($scope, $elem, $attrs){
             var width = (parseInt($attrs.width) || document.body.clientWidth),
                 height = (parseInt($attrs.height) || document.body.clientHeight);
@@ -42,7 +46,7 @@ app.directive("cfg", [function(){
                 .append("g")
                 .attr("transform", "translate(120,0)");
 
-            var root = treeData;
+            var root = $scope.tree;
             root.x0 = height / 2;
             root.y0 = 0;
 
@@ -144,6 +148,7 @@ app.directive("cfg", [function(){
     };
 }]);
 
-app.controller("mainCtrl", function($scope){
-
-});
+app.controller("mainCtrl", ["$scope", "$injector", function($scope, $injector){
+    $scope.parser = $injector.get("javaToAST");
+    $scope.tree = treeData;
+}]);

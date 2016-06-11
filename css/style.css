@@ -27,7 +27,7 @@ body {
 
 .node circle {
     fill: #FFF;
-    stroke: steelblue;
+    stroke: #C3C3C3;
     stroke-width: 3px;
 }
 
@@ -42,7 +42,7 @@ body {
 }
 
 .navigation {
-    top: -120px;
+    top: -64px;
     position: relative;
     left: 0;
     -webkit-transition: all 0.2s;
@@ -106,25 +106,30 @@ body {
     background-color: #000;
 }
 
-ul {
+.navigation{
+    height: 128px;
+}
+
+.navigation ul {
     list-style-type: none;
     margin: 0;
     text-align: center;
     padding: 0;
     display: block;
     width: 100%;
-    height: 64px;
+    height: 63px;
     vertical-align: middle;
     background-color: #CAF200;
+    border-bottom: 1px solid black;
 }
 
-ul li {
+.navigation ul li {
     float: left;
     margin-right: 1px;
 }
 
 .brand {
-    margin-right: 120px !important;
+    margin-right: 119px !important;
 }
 
 .brand > a {
@@ -132,9 +137,9 @@ ul li {
     color: #2E3233 !important;
 }
 
-ul li a {
-    width: 120px;
-    height: 64px;
+.navigation ul li a {
+    width: 119px;
+    height: 63px;
     text-decoration: none;
     display: table-cell;
     font-weight: bold;
@@ -144,6 +149,57 @@ ul li a {
     color: #2E3233;
 }
 
-ul li a:hover {
+.navigation ul li a:hover {
+    background-color: #D5FF00;
+}
+
+.repository {
+    z-index: 999;
+    top: 64px;
+    background-color: #CAF200;
+    list-style: none;
+    width: 100%;
+    height: 64px;
+    vertical-align: middle;
+    float: left;
+    position: absolute;
+}
+
+.repository input[type=text]{
+    width: 50%;
+    height: 58px;
+    padding-left: 15px;
+    background: #CAF200;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    border: none;
+}
+
+::-webkit-input-placeholder{
+    color: #2E3233;
+}
+
+.repository input[type=text]:focus{
+    outline: none;
+}
+
+.repository input[type=button]{
+    width: 120px;
+    height: 64px;
+    padding-left: 10px;
+    background: #CAF200;
+    color: #2E3233;
+    cursor: pointer;
+    border: none;
+}
+
+.repository input[type=button]:focus{
+    outline: none;
+}
+
+.repository input[type=button]:active{
     background-color: #D5FF00;
 }
