@@ -181,6 +181,7 @@ body {
     outline: none;
 }
 
+.repository input[type=submit],
 .repository input[type=button]{
     width: 120px;
     height: 64px;
