@@ -17,6 +17,23 @@
                 $(".navigation").toggleClass("open");
                 $(".cfg").toggleClass("open");
             }
+
+            $(document).ready(function(){
+                var depGraph = new Graph();
+                depGraph.addNode("root");
+
+                var last;
+                for(var i = 0; i < 100; i++){
+                    depGraph.addNode("child_" + i);
+                    if(Math.random() < 0.5 && last != undefined){
+                        depGraph.addEdge("child_" + i, last);
+                    }
+                    last = "child_" + i;
+                }
+
+                var graph = new TreeGraph({ graph: depGraph });
+                $(".graph").replaceWith(graph);
+            });
         </script>
     </head>
     <body data-ng-controller="mainCtrl">
@@ -37,7 +54,10 @@
         <div class="close-button" onclick="toggleMenu()"></div>
         <div class="graph"></div>
         <div class="repository-bar">
-            <div class="repository-name"> {{ repository.owner.login + "/" + repository.name }}</div>
+            <div class="repository-name">{{ repository.name || "Repository" }}</div>
+            <div class="repository-browser">
+
+            </div>
         </div>
     </body>
 </html>

@@ -17,6 +17,8 @@ canvas {
     position: relative;
     top: -64px;
     cursor: pointer;
+    width: 84%;
+    height: 100%;
 }
 
 .node {
@@ -215,7 +217,7 @@ canvas {
 
 .repository-bar {
     top: -60px;
-    width: 120px;
+    width: 15%;
     float: right;
     height: 100%;
     display: block;
@@ -224,14 +226,16 @@ canvas {
 }
 
 .repository-bar .repository-name {
-    text-align: left;
-    height: 60px;
+    text-align: center;
+    margin-top: 5px;
+    display: block;
+    height: 25%;
+    width: 100%;
+    font-size: 24px;
     color: #F3F3F3;
-    font-weight: bold;
-    font-size: 64px;
-    -webkit-transform: rotate(-90deg) translate(-400%);
-    -moz-transform: rotate(-90deg) translate(-400%);
-    -ms-transform: rotate(-90deg) translate(-400%);
-    -o-transform: rotate(-90deg) translate(-400%);
-    transform: rotate(-90deg) translate(-400%);
+}
+
+.repository-bar .repository-browser{
+    height: 100%;
+    width: 50%;
 }
