@@ -55,9 +55,7 @@
                 dependencyGraph.addEdge("child0", "child2");
                 dependencyGraph.addEdge("child0", "child3");
 
-                var graph = new DependencyGraph({
-                    graph: dependencyGraph
-                });
+                var graph = new TreeGraph({ graph: dependencyGraph });
                 $(".graph").replaceWith(graph);
             });
         </script>

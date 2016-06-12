@@ -69,7 +69,7 @@ var Edge = function(from, to){
     this.to = to;
 };
 
-var DependencyGraph = function(options){
+var TreeGraph = function(options){
     this.graph = options.graph;
     this.nodesCount = options.nodesCount || 20;
     this.edgesCount = options.edgesCount || 10;
