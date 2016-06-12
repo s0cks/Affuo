@@ -136,10 +136,6 @@ var TreeGraph = function(options){
         render();
     };
 
-    var randomFromTo = function(from, to){
-        return Math.floor(Math.random() * (to - from + 1) + from);
-    };
-
     var compileGraph = function(graph){
         var i;
         for(i = 0; i < graph.nodes.length; i++){
