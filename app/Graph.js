@@ -82,11 +82,11 @@ var DependencyGraph = function(options){
     trackBall.addEventListener("change", render);
 
     var scene = new THREE.Scene();
-    var geometry = new THREE.CubeGeometry(25, 25, 25);
+    var geometry = new THREE.CubeGeometry(100, 100, 100);
     var geometries = [];
 
     var drawNode = function(node){
-        var drawObject = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xFFFFFF, opacity: 0.5 }));
+        var drawObject = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x000000, opacity: 0.5 }));
 
         var area = 5000;
         drawObject.position.x = Math.floor(Math.random() * (area + area + 1) - area);
@@ -101,7 +101,7 @@ var DependencyGraph = function(options){
     };
 
     var drawEdge = function(source, target){
-        var material = new THREE.LineBasicMaterial({ color: 0xFF0000, opacity: 1, lineWidth: 0.5 });
+        var material = new THREE.LineBasicMaterial({ color: 0xF3F3F3, opacity: 1, lineWidth: 0.5 });
 
         var geo = new THREE.Geometry();
         geo.vertices.push(source.data.drawObject.position);
