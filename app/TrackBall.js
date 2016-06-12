@@ -1,3 +1,10 @@
+var State = {
+    NONE: 1 << 0,
+    ROTATE: 1 << 1,
+    ZOOM: 1 << 2,
+    PAN: 1 << 3
+};
+
 THREE.TrackBall = function (obj, dom) {
     this.object = obj;
     this.dom = (dom !== undefined) ? dom : document;
@@ -26,12 +33,6 @@ THREE.TrackBall = function (obj, dom) {
     this.panStart = new THREE.Vector2();
     this.panEnd = new THREE.Vector2();
 
-    var State = {
-        NONE: 1 << 0,
-        ROTATE: 1 << 1,
-        ZOOM: 1 << 2,
-        PAN: 1 << 3
-    };
     this.state = State.NONE;
 
     var self = this;
@@ -187,9 +188,7 @@ THREE.TrackBall = function (obj, dom) {
     var keydown = function(e){
         window.removeEventListener("keydown", keydown);
         self.prevState = self.state;
-        if(self.state !== State.NONE){
-            return;
-        } else if(e.shiftKey){
+        if(self.state === State.NONE && e.shiftKey){
             self.state = State.ROTATE;
         }
     };
