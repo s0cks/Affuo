@@ -70,7 +70,7 @@ var DependencyGraph = function(options){
 
     var self = this;
 
-    var renderer = new THREE.WebGLRenderer({ alpha: true });
+    var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(this.xSize, this.ySize);
 
     var camera = new THREE.PerspectiveCamera(40, this.xSize / this.ySize, 1, 10000000);
@@ -85,19 +85,17 @@ var DependencyGraph = function(options){
     var geometry = new THREE.CubeGeometry(100, 100, 100);
     var geometries = [];
 
-    var drawNode = function(node){
+    var drawNode = function(n){
         var drawObject = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x000000, opacity: 0.5 }));
-
         var area = 5000;
         drawObject.position.x = Math.floor(Math.random() * (area + area + 1) - area);
         drawObject.position.y = Math.floor(Math.random() * (area + area + 1) - area);
         drawObject.position.z = Math.floor(Math.random() * (area + area + 1) - area);
-        console.log("Node @" + JSON.stringify(drawObject.position));
+        drawObject.id = n.id;
 
-        drawObject.id = node.id;
-        node.data.drawObject = drawObject;
-        node.position = drawObject.position;
-        scene.add(drawObject);
+        n.data.drawObject = drawObject;
+        n.position = drawObject.position;
+        scene.add(n.data.drawObject);
     };
 
     var drawEdge = function(source, target){
@@ -107,7 +105,7 @@ var DependencyGraph = function(options){
         geo.vertices.push(source.data.drawObject.position);
         geo.vertices.push(target.data.drawObject.position);
 
-        var line = new THREE.Line(geo, material, THREE.LinePieces);
+        var line = new THREE.LineSegments(geo, material);
         line.scale.x = line.scale.y = line.scale.z = 1;
         line.originalScale = 1;
 
@@ -151,7 +149,7 @@ var DependencyGraph = function(options){
                 if(graph.addNode(target)){
                     drawNode(target);
                     nodes.push(target);
-                    if(graph.addEdge(node, target)){
+                    if(graph.addEdge(n, target)){
                         drawEdge(n, target);
                     }
                 }

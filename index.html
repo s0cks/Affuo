@@ -5,6 +5,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-route.min.js"
                 charset="utf-8"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.0.4/ng-file-upload-all.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.js"></script>
         <script src="app/app.js"></script>
         <script src="app/TrackBall.js"></script>
@@ -29,7 +30,8 @@
             <div class="repository">
                 <form>
                     <input type="text" placeholder="Import Repository..." data-ng-model="repository_link"/>
-                    <input type="submit" data-ng-submit="loadRepository(repository_link)" value="Import" data-ng-click="repository = loadRepository(repository_link)"/>
+                    <input type="submit" data-ng-submit="loadRepository(repository_link)" value="Import"
+                           data-ng-click="repository = loadRepository(repository_link)"/>
                 </form>
             </div>
         </div>
@@ -40,14 +42,14 @@
         </div>
 
         <script>
-            $(document).ready(function(){
+            $(document).ready(function () {
                 var testGraph = new Graph();
                 var last = null;
-                for(var i = 0; i < 10; i++){
+                for (var i = 0; i < 10; i++) {
                     var current = new Node("test" + i);
                     testGraph.addNode(current);
 
-                    if(!(Math.random() + 0.5 | 0) && last !== null){
+                    if (!(Math.random() + 0.5 | 0) && last !== null) {
                         testGraph.addEdge(last, current);
                     }
 
