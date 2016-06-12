@@ -65,8 +65,8 @@ var DependencyGraph = function(options){
     this.graph = options.graph;
     this.nodesCount = options.nodesCount || 20;
     this.edgesCount = options.edgesCount || 10;
-    this.xSize = options.size || document.body.clientWidth - 120;
-    this.ySize = options.size || document.body.clientHeight - 120;
+    this.xSize = options.size || document.body.clientWidth - 122;
+    this.ySize = options.size || document.body.clientHeight;
 
     var self = this;
 
