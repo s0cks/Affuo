@@ -199,7 +199,7 @@ THREE.TrackBall = function (obj, dom) {
     };
 
     self.dom.addEventListener("mousewheel", mousewheel, false);
-    self.dom.addEventListener("DOMMouseScrool", mousewheel, false);
+    self.dom.addEventListener("DOMMouseScroll", mousewheel, false);
     self.dom.addEventListener("mousedown", mousedown, false);
     window.addEventListener("keydown", keydown, false);
     window.addEventListener("keyup", keyup, false);
