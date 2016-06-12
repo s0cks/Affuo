@@ -5,4 +5,6 @@ var express = require("express"),
 
 app.use(bodyParser.json());
 
+app.use("/", express.static("dist"));
+
 app.listen(port);
