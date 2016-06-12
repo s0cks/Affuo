@@ -23,7 +23,6 @@
         <div class="navigation">
             <ul>
                 <li class="brand"><a href="#">Affuo</a></li>
-                <li><a href="#/dashboard>">Home</a></li>
                 <li><a href="https://github.com/s0cks/">Creator</a></li>
                 <li><a href="https://github.com/s0cks/Affuo">GitHub</a></li>
             </ul>
@@ -40,24 +39,5 @@
         <div class="repository-bar">
             <div class="repository-name"> {{ repository.owner.login + "/" + repository.name }}</div>
         </div>
-
-        <script>
-            $(document).ready(function () {
-                var dependencyGraph = new Graph();
-                dependencyGraph.addNode("root");
-                dependencyGraph.addNode("child0");
-                dependencyGraph.addNode("child1");
-                dependencyGraph.addNode("child2");
-                dependencyGraph.addNode("child3");
-
-                dependencyGraph.addEdge("root", "child0");
-                dependencyGraph.addEdge("root", "child1");
-                dependencyGraph.addEdge("child0", "child2");
-                dependencyGraph.addEdge("child0", "child3");
-
-                var graph = new TreeGraph({ graph: dependencyGraph });
-                $(".graph").replaceWith(graph);
-            });
-        </script>
     </body>
 </html>

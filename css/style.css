@@ -1,3 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 body {
     margin: 0;
     left: 0;
@@ -7,7 +13,7 @@ body {
     background-color: #2E3233;
 }
 
-canvas{
+canvas {
     position: relative;
     top: -64px;
     cursor: pointer;
@@ -44,7 +50,7 @@ canvas{
     transition: all 0.2s;
 }
 
-.navigation.open{
+.navigation.open {
     top: 0;
 }
 
@@ -54,14 +60,14 @@ canvas{
     box-sizing: border-box;
     display: inline-block;
     position: absolute;
-    left: 90%;
+    left: 95%;
     top: 10px;
     cursor: pointer;
     z-index: 1000;
 }
 
 .close-button:before,
-.close-button:after{
+.close-button:after {
     transform: rotate(0deg);
     line-height: 2px;
     content: '';
@@ -77,7 +83,7 @@ canvas{
     background-color: #000;
 }
 
-.close-button.open:before{
+.close-button.open:before {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
@@ -85,7 +91,7 @@ canvas{
     transform: rotate(-45deg);
 }
 
-.close-button.open:after{
+.close-button.open:after {
     -webkit-transform: rotate(-135deg);
     -moz-transform: rotate(-135deg);
     -ms-transform: rotate(-135deg);
@@ -93,7 +99,7 @@ canvas{
     transform: rotate(-135deg);
 }
 
-.navigation{
+.navigation {
     height: 128px;
 }
 
@@ -116,12 +122,15 @@ canvas{
 }
 
 .brand {
-    margin-right: 119px !important;
+    margin-right: 64px !important;
+    width: 240px;
+    position: relative;
 }
 
 .brand > a {
-    background-color: #F3F3F3 !important;
+    background-color: #FAFAFA !important;
     color: #2E3233 !important;
+    width: 240px !important;
 }
 
 .navigation ul li a {
@@ -152,47 +161,59 @@ canvas{
     position: absolute;
 }
 
-.repository input[type=text]{
-    width: 50%;
-    height: 58px;
+.repository form{
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.repository input[type=text] {
+    width: 75%;
+    top: 12px;
+    height: 42px;
     padding-left: 15px;
     background: #F3F3F3;
+    position: relative;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
-    border: none;
+    border: 1px solid #2E3233;
+    border-radius: 25px;
 }
 
-::-webkit-input-placeholder{
+::-webkit-input-placeholder {
     color: #2E3233;
 }
 
-.repository input[type=text]:focus{
+.repository input[type=text]:focus,
+.repository input[type=submit]:focus{
     outline: none;
 }
 
 .repository input[type=submit],
-.repository input[type=button]{
+.repository input[type=button] {
     width: 120px;
-    height: 64px;
-    padding-left: 10px;
+    top: 12px;
+    position: relative;
+    height: 42px;
+    margin-left: 32px;
     background: #F3F3F3;
     color: #2E3233;
     cursor: pointer;
-    border: none;
+    border: 1px solid #2E3233;
+    border-radius: 25px;
 }
 
-.repository input[type=button]:focus{
+.repository input[type=button]:focus {
     outline: none;
 }
 
-.repository input[type=button]:active{
+.repository input[type=button]:active {
     background-color: #F3F3F3;
 }
 
-.repository-bar{
+.repository-bar {
     top: -60px;
     width: 120px;
     float: right;
@@ -202,7 +223,7 @@ canvas{
     border-left: 2px solid #404445;
 }
 
-.repository-bar .repository-name{
+.repository-bar .repository-name {
     text-align: left;
     height: 60px;
     color: #F3F3F3;
