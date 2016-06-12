@@ -1,17 +1,14 @@
 var app = angular.module("affuo", [ "ngRoute" ]);
 
 var treeData = {
-    "name": "Parent",
-    "parent": null,
+    "id": "root",
     "children": [
         {
-            "name": "Test",
-            "parent": "Parent",
+            "name": "child0",
             "children": []
         },
         {
-            "name": "Hello World",
-            "parent": "Parent",
+            "name": "child1",
             "children": []
         }
     ]

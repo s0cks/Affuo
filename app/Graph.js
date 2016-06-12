@@ -5,9 +5,10 @@ var Graph = function(){
 };
 
 Graph.prototype.addNode = function(node){
-    if(this.nodeSet[node.id] == undefined){
-        this.nodeSet[node.id] = node;
-        this.nodes.push(node);
+    if(this.nodeSet[node] == undefined){
+        var n = new Node(node);
+        this.nodeSet[node] = n;
+        this.nodes.push(n);
         return true;
     }
 
@@ -19,6 +20,14 @@ Graph.prototype.get = function(node){
 };
 
 Graph.prototype.addEdge = function(from, to){
+    if(typeof from === "string"){
+        from = this.nodeSet[from];
+    }
+
+    if(typeof to === "string"){
+        to = this.nodeSet[to];
+    }
+
     if(from.addConnectedTo(to) == true){
         var edge = new Edge(from, to);
         this.edges.push(edge);
@@ -58,7 +67,6 @@ Node.prototype.connectedTo = function(node){
 var Edge = function(from, to){
     this.from = from;
     this.to = to;
-    this.data = {};
 };
 
 var DependencyGraph = function(options){
@@ -99,7 +107,7 @@ var DependencyGraph = function(options){
     };
 
     var drawEdge = function(source, target){
-        var material = new THREE.LineBasicMaterial({ color: 0xF3F3F3, opacity: 1, lineWidth: 0.5 });
+        var material = new THREE.LineBasicMaterial({ color: 0xF3F3F3, opacity: 1, linewidth: 0.5 });
 
         var geo = new THREE.Geometry();
         geo.vertices.push(source.data.drawObject.position);
@@ -133,28 +141,14 @@ var DependencyGraph = function(options){
     };
 
     var compileGraph = function(graph){
-        var node = new Node(0);
-        graph.addNode(node);
-        drawNode(node);
+        var i;
+        for(i = 0; i < graph.nodes.length; i++){
+            drawNode(graph.nodes[i]);
+        }
 
-        var nodes = [];
-        nodes.push(node);
-
-        var steps = 1;
-        while(nodes.length != 0 && steps < self.nodesCount){
-            var n = nodes.shift();
-            var numEdges = randomFromTo(1, self.edgesCount);
-            for(var i = 1; i <= numEdges; i++){
-                var target = new Node(i * steps);
-                if(graph.addNode(target)){
-                    drawNode(target);
-                    nodes.push(target);
-                    if(graph.addEdge(n, target)){
-                        drawEdge(n, target);
-                    }
-                }
-            }
-            steps++;
+        for(i = 0; i < graph.edges.length; i++){
+            var edge = graph.edges[i];
+            drawEdge(edge.from, edge.to);
         }
     };
 

@@ -43,21 +43,21 @@
 
         <script>
             $(document).ready(function () {
-                var testGraph = new Graph();
-                var last = null;
-                for (var i = 0; i < 10; i++) {
-                    var current = new Node("test" + i);
-                    testGraph.addNode(current);
+                var dependencyGraph = new Graph();
+                dependencyGraph.addNode("root");
+                dependencyGraph.addNode("child0");
+                dependencyGraph.addNode("child1");
+                dependencyGraph.addNode("child2");
+                dependencyGraph.addNode("child3");
 
-                    if (!(Math.random() + 0.5 | 0) && last !== null) {
-                        testGraph.addEdge(last, current);
-                    }
+                dependencyGraph.addEdge("root", "child0");
+                dependencyGraph.addEdge("root", "child1");
+                dependencyGraph.addEdge("child0", "child2");
+                dependencyGraph.addEdge("child0", "child3");
 
-                    last = current;
-                }
-
-                var graph = new DependencyGraph({ graph: testGraph });
-
+                var graph = new DependencyGraph({
+                    graph: dependencyGraph
+                });
                 $(".graph").replaceWith(graph);
             });
         </script>
