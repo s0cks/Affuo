@@ -5,6 +5,7 @@
   "dependencies": {
     "angular": "^1.5.6",
     "angular-ui-router": "^0.3.1",
-    "three.js": "threejs#*"
+    "three.js": "threejs#*",
+    "jquery": "^3.0.0"
   }
 }

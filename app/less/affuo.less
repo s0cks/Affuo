@@ -1,0 +1,178 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+@background: #2E3233;
+@navigation: #F3F3F3;
+@text: #2E3233;
+
+body {
+  margin: 0;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  background-color: @background;
+}
+
+.navigation {
+  top: -64px;
+  position: relative;
+  left: 0;
+  height: 128px;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+
+  &.open {
+    top: 0;
+  }
+
+  & ul {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+    padding: 0;
+    display: block;
+    width: 100%;
+    height: 63px;
+    vertical-align: middle;
+    background-color: @navigation;
+    border-bottom: 1px solid #000;
+
+    & .brand {
+      margin-right: 120px !important;
+      width: 240px;
+      position: relative;
+
+      > a {
+        background-color: #FAFAFA !important;
+        color: @text !important;
+        width: 240px !important;
+      }
+    }
+
+    & li {
+      float: left;
+      margin-right: 1px;
+
+      & a {
+        width: 119px;
+        height: 63px;
+        text-decoration: none;
+        display: table-cell;
+        font-weight: bold;
+        font-size: 12px;
+        vertical-align: middle;
+        text-align: center;
+        color: @text;
+
+        &:hover {
+          background-color: #FAFAFA;
+        }
+      }
+    }
+  }
+
+  .repository {
+    background-color: @navigation;
+    list-style: none;
+    width: 100%;
+    height: 64px;
+    vertical-align: middle;
+    float: left;
+    position: relative;
+
+    & form {
+      height: 100%;
+      margin-bottom: 0;
+
+      & input[type=submit] {
+        width: 120px;
+        top: 12px;
+        position: relative;
+        height: 42px;
+        margin-left: 32px;
+        background: @navigation;
+        color: @text;
+        cursor: pointer;
+        border: 1px solid @background;
+        border-radius: 25px;
+      }
+
+      & input[type=text] {
+        width: 75%;
+        top: 12px;
+        height: 42px;
+        padding-left: 15px;
+        background: @navigation;
+        position: relative;
+        border: 1px solid @background;
+        border-radius: 25px;
+      }
+
+      & input[type=text]:focus,
+      & input[type=submit]:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+::-webkit-input-placeholder {
+  color: @text;
+}
+
+.close-button {
+  height: 64px;
+  width: 64px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 95%;
+  cursor: pointer;
+  z-index: 1000;
+
+  &:before,
+  &:after{
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    line-height: 2px;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -32px;
+    display: block;
+    height: 2px;
+    width: 32px;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+    background-color: @background;
+  }
+
+  &.open:before{
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  &.open:after{
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+}
