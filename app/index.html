@@ -6,12 +6,29 @@
         <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
         <script src="bower_components/three.js/build/three.min.js"></script>
         <script src="js/app.js"></script>
+        <script src="js/TrackBall.js"></script>
+        <script src="js/Graph.js"></script>
         <link rel="stylesheet" href="css/affuo.css"/>
         <script>
-            var toggleMenu = function(){
+            var toggleMenu = function () {
                 $(".close-button").toggleClass("open");
                 $(".navigation").toggleClass("open");
             };
+
+            $(document).ready(function () {
+                var depGraph = new Graph();
+                depGraph.addNode("root");
+                var last;
+                for (var i = 0; i < 100; i++) {
+                    depGraph.addNode("child_" + i);
+                    if (Math.random() < 0.5 && last != undefined) {
+                        depGraph.addEdge("child_" + i, last);
+                    }
+                    last = "child_" + i;
+                }
+                var graph = new TreeGraph({graph: depGraph});
+                $(".graph").append(graph);
+            });
         </script>
     </head>
     <body data-ng-controller="mainCtrl">
@@ -29,5 +46,6 @@
             </div>
         </div>
         <div class="close-button" onclick="toggleMenu()"></div>
+        <div class="graph"></div>
     </body>
 </html>
