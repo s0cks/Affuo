@@ -12,7 +12,7 @@
     "node": "0.12.4"
   },
   "scripts": {
-    "prestart": "gulp",
+    "postinstall": "gulp",
     "start": "node server.js"
   }
 }
