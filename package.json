@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "body-parser": "^1.15.1",
+    "bower": "^1.7.9",
     "express": "^4.13.4",
     "gulp": "^3.9.1",
     "gulp-less": "^3.1.0"
@@ -12,7 +13,7 @@
     "node": "0.12.4"
   },
   "scripts": {
-    "postinstall": "gulp",
+    "postinstall": "./node_modules/bower/bin/bower install && gulp",
     "start": "node server.js"
   }
 }
